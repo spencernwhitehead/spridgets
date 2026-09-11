@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://cxtk3qatl3enh"]
+
+[ext_resource type="Script" uid="uid://bxtj2pj4cjs6r" path="res://game/rooms/blue_room/room_blue_room.gd" id="1_un4y3"]
+[ext_resource type="PackedScene" uid="uid://dqexv3mcv5gd4" path="res://game/rooms/blue_room/props/background/prop_background.tscn" id="2_52wro"]
+[ext_resource type="PackedScene" uid="uid://coeklftijasbn" path="res://game/rooms/blue_room/props/window/prop_window.tscn" id="3_37ra5"]
+[ext_resource type="PackedScene" uid="uid://dsap8sjwdx338" path="res://game/characters/green_guy/character_green_guy.tscn" id="4_paqp7"]
+[ext_resource type="PackedScene" uid="uid://bx8364s4x8llw" path="res://game/rooms/blue_room/hotspots/exit/hotspot_exit.tscn" id="5_37ra5"]
+
+[node name="RoomBlueRoom" type="Node2D" unique_id=1819122360]
+script = ExtResource("1_un4y3")
+script_name = "BlueRoom"
+has_player = false
+width = 640
+height = 400
+metadata/_popochiu_aseprite_config_ = {
+"autotrace_polygons": true,
+"only_visible_layers": true,
+"source": "res://art/aseprite/blue_room.aseprite",
+"tags": [{
+"autoplays": false,
+"direction": "forward",
+"from": 1.0,
+"import": true,
+"loops": false,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": "background",
+"to": 1.0
+}, {
+"autoplays": false,
+"direction": "forward",
+"from": 2.0,
+"import": true,
+"loops": false,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": "default_idle",
+"to": 3.0
+}, {
+"autoplays": false,
+"direction": "forward",
+"from": 4.0,
+"import": true,
+"loops": false,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": "talk",
+"to": 5.0
+}, {
+"autoplays": false,
+"direction": "forward",
+"from": 6.0,
+"import": true,
+"loops": false,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": "idle",
+"to": 7.0
+}, {
+"autoplays": false,
+"direction": "forward",
+"from": 8.0,
+"import": true,
+"loops": false,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": "yellow_talk",
+"to": 9.0
+}, {
+"autoplays": false,
+"direction": "forward",
+"from": 10.0,
+"import": true,
+"loops": false,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": "yellow_idle",
+"to": 11.0
+}, {
+"direction": "forward",
+"from": 12,
+"import": true,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": "@window",
+"to": 17
+}, {
+"autoplays": false,
+"direction": "forward",
+"from": 12.0,
+"import": true,
+"loops": false,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": ":window_default",
+"to": 12.0
+}, {
+"autoplays": false,
+"direction": "forward",
+"from": 13.0,
+"import": true,
+"loops": false,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": ":window_click",
+"to": 17.0
+}],
+"tags_exp": true,
+"wipe_old_anims": true
+}
+
+[node name="WalkableAreas" type="Node2D" parent="." unique_id=430675461]
+
+[node name="Props" type="Node2D" parent="." unique_id=125349627]
+
+[node name="Background" parent="Props" unique_id=336684563 instance=ExtResource("2_52wro")]
+
+[node name="Window" parent="Props" unique_id=1476247901 instance=ExtResource("3_37ra5")]
+
+[node name="Hotspots" type="Node2D" parent="." unique_id=188502571]
+
+[node name="Exit" parent="Hotspots" unique_id=1580800985 instance=ExtResource("5_37ra5")]
+position = Vector2(320, 200)
+interaction_polygon = PackedVector2Array(234, -45, 306, -42, 286, 177, 220, 121)
+
+[node name="Regions" type="Node2D" parent="." unique_id=787279433]
+
+[node name="Markers" type="Node2D" parent="." unique_id=1722332958]
+
+[node name="Characters" type="Node2D" parent="." unique_id=177583298]
+
+[node name="CharacterGreenGuy *" parent="Characters" unique_id=87837330 instance=ExtResource("4_paqp7")]
+position = Vector2(320, 200)
+metadata/EDITOR_TMP_COPY_OF = "GreenGuy"

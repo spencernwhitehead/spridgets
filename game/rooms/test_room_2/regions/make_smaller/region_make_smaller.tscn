@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dcnwpivnskuvr"]
+
+[ext_resource type="Script" path="res://game/rooms/test_room_2/regions/make_smaller/region_make_smaller.gd" id="1_t232a"]
+
+[node name="MakeSmaller" type="Area2D" unique_id=374256850]
+monitorable = false
+script = ExtResource("1_t232a")
+script_name = "MakeSmaller"
+description = "Make Smaller"
+interaction_polygon = PackedVector2Array()
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1553015211]
+visible = false
+modulate = Color(0, 1, 1, 1)
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)

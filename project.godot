@@ -1,0 +1,89 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="spridgets"
+run/main_scene="res://game/rooms/test_room_2/room_test_room_2.tscn"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+config/icon="uid://r0aljt0bjfx3"
+
+[autoload]
+
+T="*uid://30lm6k5s368s"
+Globals="*uid://vuf6csvfokd3"
+Cursor="*uid://c2pqh7ajiuiy0"
+E="*uid://rda8wggldt5o"
+R="*uid://dll56agxqtlg6"
+C="*uid://dv8s0p7jc8uhv"
+I="*uid://bhgtc05dwsc20"
+D="*uid://c7u7ra22yc3ow"
+A="*uid://bnsrw8wl2mxyq"
+G="*uid://blk6nfpfiqrd2"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=400
+window/size/window_width_override=1280
+window/size/window_height_override=800
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/popochiu/editor/gizmos/plugin.cfg", "res://addons/popochiu/editor/importers/plugin.cfg", "res://addons/popochiu/plugin.cfg")
+
+[input]
+
+popochiu-interact={
+&"deadzone": 0.5,
+&"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+popochiu-look={
+&"deadzone": 0.5,
+&"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":2,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+popochiu-skip={
+&"deadzone": 0.5,
+&"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194305,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://game/characters/green_guy/character_green_guy.gd", "res://game/rooms/blue_room/props/window/prop_window.gd", "res://game/rooms/blue_room/props/window_click/prop_window_click.gd", "res://game/rooms/blue_room/props/background/prop_background.gd", "res://game/rooms/dog_room_test/room_dog_room_test.gd", "res://game/rooms/test_room_2/props/dog/prop_dog.gd", "res://game/rooms/dog_room_test/props/back/prop_back.gd", "res://game/rooms/dog_room_test/hotspots/test_back/hotspot_test_back.gd", "res://game/characters/dog_test/character_dog_test.gd", "res://game/characters/placeholder/character_placeholder.gd", "res://game/rooms/test_room_2/props/cube/prop_cube.gd")
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[popochiu]
+
+pixel/pixel_art_textures=true
+gui/transition_layer/default_room_transition="Tunnel"
+gui/transition_layer/room_transition_duration=0.3
+pixel/pixel_perfect=true
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+rendering_device/driver.macos="vulkan"
+rendering_device/fallback_to_opengl3=false
+renderer/rendering_method.mobile="gl_compatibility"
+
+[shader_globals]
+
+object_position={
+"type": "vec2",
+"value": Vector2(0, 0)
+}

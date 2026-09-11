@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://dipqx3w1eb123"]
+
+[ext_resource type="Script" uid="uid://b1r7k1qyasrdn" path="res://game/rooms/test_room_2/props/smiley/prop_smiley.gd" id="1_xdfxb"]
+[ext_resource type="Texture2D" uid="uid://cn7ywyfpr1vw6" path="res://game/rooms/test_room_2/props/smiley/smiley.png" id="2_b7h5r"]
+
+[sub_resource type="Animation" id="Animation_fg3ov"]
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 1, 1]
+}
+
+[sub_resource type="Animation" id="Animation_8web0"]
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0tla2"]
+_data = {
+&"click": SubResource("Animation_fg3ov"),
+&"default": SubResource("Animation_8web0")
+}
+
+[node name="Smiley" type="Area2D" unique_id=1611799842]
+position = Vector2(320, 200)
+script = ExtResource("1_xdfxb")
+obstacle_polygon = [Vector2(-16, -16), Vector2(16, -16), Vector2(16, 16), Vector2(-16, 16)]
+script_name = "Smiley"
+description = "Smiley"
+baseline = -21
+walk_to_point = Vector2(205.33557, -15.860962)
+look_at_point = Vector2(247.77441, -58.299835)
+cursor = 1
+interaction_polygon = PackedVector2Array(202, -102, 300, -118, 300, -28, 189, -22)
+metadata/ANIM_NAME = "@smiley"
+metadata/ANIM_AUTOPLAY = false
+metadata/ANIM_GROUP = {
+"children": [{
+"anim_name": "default",
+&"autoplays": true,
+&"direction": "forward",
+&"from": 3,
+&"loops": false,
+"tag_name": ":smiley_default",
+&"to": 3
+}, {
+"anim_name": "click",
+&"autoplays": false,
+&"direction": "forward",
+&"from": 4,
+&"loops": false,
+"tag_name": ":smiley_click",
+&"to": 6
+}],
+"direction": "forward",
+"error": "",
+"from": 3,
+"is_valid": true,
+"kind": "group",
+"name": "smiley",
+"tag_name": "@smiley",
+"to": 6
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=491825955]
+texture_filter = 1
+texture = ExtResource("2_b7h5r")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1834969268]
+libraries/ = SubResource("AnimationLibrary_0tla2")
+autoplay = &"default"
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=636495100]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(192, -67, 194, -82, 199, -92, 209, -102, 219, -110, 232, -116, 240, -118, 284, -117, 294, -106, 309, -87, 312, -80, 312, -74, 311, -68, 307, -59, 305, -56, 299, -49, 287, -37, 276, -30, 256, -20, 243, -17, 232, -17, 222, -18, 206, -22, 195, -32, 192, -41)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=178799344]
+visible = false
+vertices = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+affect_navigation_mesh = true
+carve_navigation_mesh = true

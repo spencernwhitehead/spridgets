@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://kii7c83w67sx"]
+
+[ext_resource type="Script" path="res://game/rooms/dog_room_test/room_dog_room_test_state.gd" id="1_h2ueu"]
+
+[resource]
+resource_name = "DogRoomTest"
+script = ExtResource("1_h2ueu")
+script_name = "DogRoomTest"
+scene = "res://game/rooms/dog_room_test/room_dog_room_test.tscn"

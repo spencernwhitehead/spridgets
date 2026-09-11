@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://rmtp3skuqk02"]
+
+[ext_resource type="Script" uid="uid://52qli7k08vn4" path="res://game/rooms/test_room_2/props/cube/prop_cube.gd" id="1_7xvp2"]
+[ext_resource type="Texture2D" uid="uid://bp6vocclwh0b0" path="res://game/rooms/test_room_2/props/cube/cube.png" id="2_4h53m"]
+
+[sub_resource type="Animation" id="Animation_4h53m"]
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xmh7w"]
+_data = {
+&"cube": SubResource("Animation_4h53m")
+}
+
+[node name="Cube" type="Area2D" unique_id=725545932]
+position = Vector2(320, 200)
+script = ExtResource("1_7xvp2")
+script_name = "Cube"
+description = "Cube"
+cursor = 1
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+metadata/ANIM_NAME = "cube"
+metadata/ANIM_AUTOPLAY = false
+metadata/ANIM_GROUP = {}
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2108558014]
+texture_filter = 1
+texture = ExtResource("2_4h53m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=385475372]
+libraries/ = SubResource("AnimationLibrary_xmh7w")
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1696919646]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-295, 29, -293, -52, -287, -57, -278, -61, -237, -77, -217, -81, -209, -79, -197, -75, -183, -69, -167, -61, -141, -47, -139, -45, -139, -25, -141, 51, -147, 55, -165, 61, -173, 63, -185, 65, -211, 69, -219, 69, -293, 37, -295, 35)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=484033992]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true

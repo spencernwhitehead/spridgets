@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://b2npeeuseena3"]
+
+[ext_resource type="Script" uid="uid://lqmotnuvx85s" path="res://game/rooms/test_room_2/room_test_room_2.gd" id="1_wnqrl"]
+[ext_resource type="PackedScene" uid="uid://cihqhq72fllu2" path="res://game/rooms/test_room_2/props/background/prop_background.tscn" id="2_07d3f"]
+[ext_resource type="PackedScene" uid="uid://rmtp3skuqk02" path="res://game/rooms/test_room_2/props/cube/prop_cube.tscn" id="3_pvjuq"]
+[ext_resource type="PackedScene" uid="uid://dipqx3w1eb123" path="res://game/rooms/test_room_2/props/smiley/prop_smiley.tscn" id="4_gbxxu"]
+[ext_resource type="PackedScene" uid="uid://dcnwpivnskuvr" path="res://game/rooms/test_room_2/regions/make_smaller/region_make_smaller.tscn" id="6_s6f1a"]
+[ext_resource type="PackedScene" uid="uid://6r45wbokbni4" path="res://game/characters/dog_test/character_dog_test.tscn" id="7_s6f1a"]
+
+[node name="RoomTestRoom2" type="Node2D" unique_id=609004242]
+script = ExtResource("1_wnqrl")
+script_name = "TestRoom2"
+has_player = false
+width = 640
+height = 400
+metadata/_popochiu_aseprite_config_ = {
+"autotrace_polygons": true,
+"only_visible_layers": true,
+"source": "res://art/aseprite/test_room_2.aseprite",
+"tags": [{
+"autoplays": false,
+"direction": "forward",
+"from": 1.0,
+"import": true,
+"loops": false,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": "background",
+"to": 1.0
+}, {
+"autoplays": false,
+"direction": "forward",
+"from": 2.0,
+"import": true,
+"loops": false,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": "cube",
+"to": 2.0
+}, {
+"direction": "forward",
+"from": 3,
+"import": true,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": "@smiley",
+"to": 6
+}, {
+"autoplays": false,
+"direction": "forward",
+"from": 3.0,
+"import": true,
+"loops": false,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": ":smiley_default",
+"to": 3.0
+}, {
+"autoplays": false,
+"direction": "forward",
+"from": 4.0,
+"import": true,
+"loops": false,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": ":smiley_click",
+"to": 6.0
+}],
+"tags_exp": true,
+"wipe_old_anims": true
+}
+
+[node name="WalkableAreas" type="Node2D" parent="." unique_id=1547774303]
+
+[node name="Props" type="Node2D" parent="." unique_id=372541052]
+
+[node name="Background" parent="Props" unique_id=3168186 instance=ExtResource("2_07d3f")]
+
+[node name="Smiley" parent="Props" unique_id=1611799842 instance=ExtResource("4_gbxxu")]
+
+[node name="Cube" parent="Props" unique_id=725545932 instance=ExtResource("3_pvjuq")]
+obstacle_polygon = [Vector2(-16, -16), Vector2(16, -16), Vector2(16, 16), Vector2(-16, 16)]
+interaction_polygon = PackedVector2Array(-295, 29, -293, -52, -287, -57, -278, -61, -237, -77, -217, -81, -209, -79, -197, -75, -183, -69, -167, -61, -141, -47, -139, -45, -139, -25, -141, 51, -147, 55, -165, 61, -173, 63, -185, 65, -211, 69, -219, 69, -293, 37, -295, 35)
+
+[node name="Hotspots" type="Node2D" parent="." unique_id=1349551295]
+
+[node name="Regions" type="Node2D" parent="." unique_id=1002499213]
+
+[node name="MakeDogSmaller" parent="Regions" unique_id=374256850 instance=ExtResource("6_s6f1a")]
+position = Vector2(320, 200)
+scaling = true
+scale_top = 0.5
+scale_bottom = 0.5
+interaction_polygon = PackedVector2Array(15.321899, -30.381012, 234.19122, -27.292969, 241.60254, 168.72491, 25.203613, 162.54889)
+
+[node name="Markers" type="Node2D" parent="." unique_id=1141495344]
+
+[node name="Characters" type="Node2D" parent="." unique_id=829655100]
+
+[node name="CharacterDogTest *" parent="Characters" unique_id=461626483 instance=ExtResource("7_s6f1a")]
+position = Vector2(320, 200)
+metadata/EDITOR_TMP_COPY_OF = "DogTest"

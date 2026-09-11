@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bqsxrs5gqr28t"]
+
+[ext_resource type="PackedScene" uid="uid://33wmak2jumqm" path="res://addons/popochiu/engine/objects/gui/components/dialog_text/dialog_portrait/dialog_portrait.tscn" id="1_yhi40"]
+
+[node name="DialogPortrait" unique_id=1635914128 instance=ExtResource("1_yhi40")]
+
+[node name="LeftAvatarContainer" parent="PanelContainer/HBoxContainer" parent_id_path=PackedInt32Array(1475365605) index="0" unique_id=713714464]
+self_modulate = Color(1, 1, 1, 0)
+
+[node name="RightAvatarContainer" parent="PanelContainer/HBoxContainer" parent_id_path=PackedInt32Array(1475365605) index="2" unique_id=780302948]
+self_modulate = Color(1, 1, 1, 0)

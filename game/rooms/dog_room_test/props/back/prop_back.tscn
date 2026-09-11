@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b02dhafel5ec5"]
+
+[ext_resource type="Script" uid="uid://cj5rfbfi4qedo" path="res://game/rooms/dog_room_test/props/back/prop_back.gd" id="1_45wht"]
+[ext_resource type="Texture2D" uid="uid://cihcjng41sjm8" path="res://assets/images/prev_button.png" id="2_fx8jd"]
+
+[node name="Back" type="Area2D" unique_id=1944446981]
+script = ExtResource("1_45wht")
+texture = ExtResource("2_fx8jd")
+script_name = "Back"
+description = "Back"
+cursor = 1
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1236683247]
+texture_filter = 1
+texture = ExtResource("2_fx8jd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1277162151]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1694865879]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=427798421]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true

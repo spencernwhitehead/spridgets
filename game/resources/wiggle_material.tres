@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cvsopks57t87u"]
+
+[ext_resource type="Shader" uid="uid://cxwhfo2gdq671" path="res://game/resources/wiggle.gdshader" id="1_wukgp"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_16eb0"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lpadk"]
+noise = SubResource("FastNoiseLite_16eb0")
+seamless = true
+seamless_blend_skirt = 1.0
+
+[resource]
+shader = ExtResource("1_wukgp")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.4
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_lpadk")

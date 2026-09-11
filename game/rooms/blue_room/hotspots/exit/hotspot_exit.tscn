@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bx8364s4x8llw"]
+
+[ext_resource type="Script" path="res://game/rooms/blue_room/hotspots/exit/hotspot_exit.gd" id="1_m34ue"]
+
+[node name="Exit" type="Area2D" unique_id=1580800985]
+script = ExtResource("1_m34ue")
+script_name = "Exit"
+description = "Exit"
+cursor = 1
+interaction_polygon = PackedVector2Array()
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=19451644]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
