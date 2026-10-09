@@ -1,6 +1,6 @@
 # @popochiu-docs-category game-objects
 @tool
-@icon("res://addons/popochiu/icons/room.png")
+@icon("res://addons/popochiu/icons/room.svg")
 class_name PopochiuRoom
 extends Node2D
 ## Represents a location in the game where characters can move and interact with objects.
@@ -548,9 +548,6 @@ func _collect_all_obstacles() -> Array[NavigationObstacle2D]:
 
 		var obstacle: NavigationObstacle2D = prop.get_navigation_obstacle()
 		if obstacle:
-			# Adjust the global position to account for the baseline because
-			# props are currently using y-sorting and not z-index.
-			obstacle.position.y -= prop.baseline * scale.y
 			obstacles.append(obstacle)
 
 	# Collect obstacles from characters (excluding temporary editor instances and player character)

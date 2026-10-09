@@ -344,7 +344,6 @@ func _fetch_tags_with_ranges(file_name: String) -> Array:
 					PopochiuUtils.print_error('Aseprite: no frame tags found in the exported metadata')
 			else:
 				PopochiuUtils.print_error('Aseprite: could not parse the exported JSON metadata')
-				print(file_name)
 			file.close()
 
 	# Always clean up the throwaway file

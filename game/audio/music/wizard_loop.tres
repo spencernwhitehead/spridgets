@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="AudioCueMusic" format=3 uid="uid://c1k5k40p4xff7"]
 
-[ext_resource type="AudioStream" uid="uid://c2ojq5nrxh3p0" path="res://game/assets/audio/music/wizard_loop.mp3" id="1_tvjdo"]
-[ext_resource type="Script" uid="uid://bt4tic1dfvyfo" path="res://addons/popochiu/engine/audio_manager/audio_cue_music.gd" id="2_j406x"]
+[ext_resource type="AudioStream" uid="uid://c2ojq5nrxh3p0" path="res://game/audio/music/wizard_loop.mp3" id="1_8d2jg"]
+[ext_resource type="Script" uid="uid://bt4tic1dfvyfo" path="res://addons/popochiu/engine/audio_manager/audio_cue_music.gd" id="2_gnjqk"]
 
 [resource]
 resource_name = "wizard_loop"
-script = ExtResource("2_j406x")
-audio = ExtResource("1_tvjdo")
+script = ExtResource("2_gnjqk")
+audio = ExtResource("1_8d2jg")
 loop = true
